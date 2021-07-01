@@ -1,8 +1,9 @@
 import './style.css'
-import * as THREE from 'three'
+import * as THREE from 'https://unpkg.com/three@0.126.1/build/three.module.js'
+import { OrbitControls } from 'https://unpkg.com/three@0.126.1/examples/jsm/controls/OrbitControls.js'
 import vertexShader from './shaders/vertex.glsl'
 import fragmentShader from './shaders/fragment.glsl'
-import * as orbitControls from 'three-orbit-controls'
+
 
 // Making a sphere
 const geometry = new THREE.SphereGeometry(5, 50, 50)
@@ -28,8 +29,8 @@ const renderer = new THREE.WebGLRenderer({
 renderer.setSize(innerWidth, innerHeight)
 renderer.setPixelRatio(devicePixelRatio)
 document.body.appendChild(renderer.domElement)
-let OrbitControls = orbitControls(THREE)
-let controls =new OrbitControls(camera, renderer.domElement)
+
+const controls =new OrbitControls(camera, renderer.domElement)
 
 // scatter light on the geometry obtained on the front side
 // const light = new THREE.DirectionalLight(0xffffff, 1)
